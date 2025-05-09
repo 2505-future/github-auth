@@ -1,9 +1,5 @@
 import { type LoaderFunctionArgs, redirect } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
-import { parseCookieHeader, serializeCookieHeader } from "@supabase/ssr";
-import { createServerClient } from "@supabase/ssr";
 import { getSessionFromCode } from "~/utils/auth";
-import { createSupabaseServerClient } from "~/utils/getServerClient";
 
 export async function loader({ request }: LoaderFunctionArgs) {
 	const requestUrl = new URL(request.url);
