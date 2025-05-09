@@ -74,7 +74,7 @@ function handleBotRequest(
 					reject(error);
 				},
 				onError(error: unknown) {
-					responseStatusCode = 500;
+					// responseStatusCode = 500;
 					// Log streaming rendering errors from inside the shell.  Don't log
 					// errors encountered during initial shell rendering since they'll
 					// reject and get logged in handleDocumentRequest.
@@ -124,7 +124,7 @@ function handleBrowserRequest(
 					reject(error);
 				},
 				onError(error: unknown) {
-					responseStatusCode = 500;
+					// responseStatusCode = 500;
 					// Log streaming rendering errors from inside the shell.  Don't log
 					// errors encountered during initial shell rendering since they'll
 					// reject and get logged in handleDocumentRequest.

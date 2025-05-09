@@ -22,9 +22,8 @@ export const meta: MetaFunction = () => {
 export async function loader({ request }: LoaderFunctionArgs) {
 	if (!isUserLoggedIn(request)) {
 		return redirect("/login");
-	} else {
-		return null;
 	}
+	return null;
 }
 
 export default function Index() {

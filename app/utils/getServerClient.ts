@@ -9,8 +9,8 @@ export function createSupabaseServerClient(request: Request) {
 	const headers = new Headers();
 
 	const supabase = createServerClient(
-		process.env.SUPABASE_URL!,
-		process.env.SUPABASE_ANON_KEY!,
+		process.env.SUPABASE_URL ?? "",
+		process.env.SUPABASE_ANON_KEY ?? "",
 		{
 			cookies: {
 				getAll() {
@@ -20,12 +20,12 @@ export function createSupabaseServerClient(request: Request) {
 					);
 				},
 				setAll(cookiesToSet) {
-					cookiesToSet.forEach(({ name, value, options }) =>
+					for (const { name, value, options } of cookiesToSet) {
 						headers.append(
 							"Set-Cookie",
 							serializeCookieHeader(name, value, options),
-						),
-					);
+						);
+					}
 				},
 			},
 		},
