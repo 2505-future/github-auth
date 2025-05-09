@@ -3,6 +3,7 @@ import {
 	parseCookieHeader,
 	serializeCookieHeader,
 } from "@supabase/ssr";
+import 'dotenv/config';
 
 export function createSupabaseServerClient(request: Request) {
 	const cookies = parseCookieHeader(request.headers.get("Cookie") ?? "");
