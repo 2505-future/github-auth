@@ -3,7 +3,7 @@ import { createSupabaseServerClient } from "~/utils/getServerClient";
 
 export const signInWithGitHub = async (
 	request: Request,
-	successRedirectPath = "http://localhost:5173/dashboard",
+	successRedirectPath = "http://localhost:3000/dashboard",
 ) => {
 	const { supabase, headers } = createSupabaseServerClient(request);
 	const { data, error } = await supabase.auth.signInWithOAuth({
